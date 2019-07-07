@@ -1,26 +1,22 @@
-import './css/style.css';
-import './css/preloader.css';
+import './styles/style.css';
+import './styles/preloader.css';
 
 import request from './request';
 
-
-console.log(1);
-
-
 function runApp(input) {
-    let links = [];
-    let arr = [];
+    const links = [];
+    const arr = [];
     let id = parseInt(input.value);
     if (!id) {return false;}
-    let graphArea = document.querySelector('.graph');
-    let errors = document.querySelector('.errors-message');
+    const graphArea = document.querySelector('.graph');
+    const errors = document.querySelector('.errors-message');
     graphArea.innerHTML = '';
     errors.innerHTML = '';
     let bugs = [id];
     request(id,0,bugs,links,arr);
 }
 
-let btn = document.querySelector('button');
-let input = document.getElementById('bugId');
+const btn = document.querySelector('button');
+const input = document.getElementById('bugId');
 
-btn.addEventListener('click', runApp.bind(this,input));
+btn.addEventListener('click', runApp.bind(this, input));
